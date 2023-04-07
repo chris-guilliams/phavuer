@@ -68,7 +68,8 @@ const props = {
   // Tween
   tween: { type: Object },
   tweens: { type: Array },
-  timeline: { type: Object }
+  timeline: { type: Object },
+  addable: { type: Boolean }
 }
 const propsEntries = Object.entries(props)
 export const mapProps = (...names) => {
@@ -89,5 +90,6 @@ export const gameObjectProps = mapProps(
   'scrollFactor', 'scrollFactorX', 'scrollFactorY',
   'dropZone',
   'depth',
-  'alpha', 'blendMode', 'pipeline'
+  'alpha', 'blendMode', 'pipeline',
+  'addable'
 )

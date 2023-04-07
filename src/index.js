@@ -14,6 +14,8 @@ import Zone from './components/Zone.vue'
 import Light from './components/Light.vue'
 import StaticBody from './components/StaticBody.vue'
 import Body from './components/Body.vue'
+import Box from './components/Box.vue'
+import MainScene from './components/MainScene.vue'
 
 const createPhavuerApp = (game, app) => {
   app.provide(InjectionKeys.Game, game)
@@ -185,5 +187,7 @@ export {
   Zone,
   Light,
   StaticBody,
-  Body
+  Body,
+  Box,
+  MainScene
 }
