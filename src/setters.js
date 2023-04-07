@@ -11,7 +11,7 @@ export const GAME_OBJECT_EVENTS = [
   { attr: 'onDragenter', emit: 'dragenter', drag: true },
   { attr: 'onDragover', emit: 'dragover', drag: true },
   { attr: 'onDragleave', emit: 'dragleave', drag: true },
-  { attr: 'onDrop', emit: 'drop', drag: true }
+  { attr: 'onDrop', emit: 'drop', drag: true },
 ]
 const fixSize = object => {
   if (object.updateDisplayOrigin) {

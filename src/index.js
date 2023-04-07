@@ -1,5 +1,6 @@
 import { inject, watch, onBeforeUnmount, customRef, getCurrentInstance } from 'vue'
 import { default as setters, deepProps, GAME_OBJECT_EVENTS } from './setters.js'
+
 import Scene from './components/Scene.vue'
 import Container from './components/Container.vue'
 import Rectangle from './components/Rectangle.vue'
@@ -55,6 +56,20 @@ const initGameObject = (object, props, context) => {
   const isBody = 'bounce' in object
   const isLight = object.constructor === Phaser.GameObjects.Light
   const scene = inject(InjectionKeys.Scene)
+
+  scene.input.keyboard.on('keydown', function (event) {
+    switch (event.keyCode) {
+      case Phaser.Input.Keyboard.KeyCodes.W:
+        context.emit('update-number', props.count)
+        break
+      case Phaser.Input.Keyboard.KeyCodes.A:
+        break
+      case Phaser.Input.Keyboard.KeyCodes.S:
+        break
+      case Phaser.Input.Keyboard.KeyCodes.D:
+        break
+    }
+  })
   if (isLight) {
     if (!scene.lights.active) scene.lights.enable()
     scene.lights.lights.push(object)
@@ -189,5 +204,5 @@ export {
   StaticBody,
   Body,
   Box,
-  MainScene
+  MainScene,
 }
